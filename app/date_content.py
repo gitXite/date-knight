@@ -4,8 +4,8 @@ restaurants = [
 ]
 
 activities = [
-    "watch_movie",
-    "mini_golf"
+    "movie",
+    "mini-golf"
 ]
 
 movies = [
