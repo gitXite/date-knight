@@ -1,18 +1,14 @@
 import random
-from lists import restaurants, activities, movies
+from date_content import activities
 
 
-date_details = {
-    "restaurant": random.choice(restaurants),
-    "activity": random.choice(activities),
-    "film": random.choice(movies)
-}
-
-def get_date_suggestion(date_details):
-    restaurant = date_details["restaurant"]
-    activity = date_details["activity"]
-    movie = date_details["film"]
-    if activity == "film":
-        return f"----------\nYour selected date:\nRestaurant: {restaurant}\nActivity: {activity}\nFilm suggestion: {movie}\n----------"
-    else:
-        return f"----------\nYour selected date:\nRestaurant: {restaurant}\nActivity: {activity}\n----------"
+def get_random_date_suggestion(n):
+    if not 0 < n < 6:
+        raise ValueError("The number of activities must be between 1 and 5")
+    
+    
+def get_number_activities(user_input):
+    n = int(input("Enter number of activities between 1-5"))
+    if not 0 < n < 6:
+        raise ValueError("The number of activities must be between 1 and 5")
+    return n
