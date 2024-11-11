@@ -1,14 +1,16 @@
-restaurants = [
-    "mcdonalds",
-    "burger_king"
-]
-
-activities = [
-    "movie",
-    "mini-golf"
-]
-
-movies = [
-    "saw",
-    "cinderella"
-]
+activities = {
+    "Movie": {
+        "genre": {
+            "Action": [],
+            "Thriller": [],
+            "Romance": [],
+            "Comedy": [],
+            "Horror": [],
+            "Science fiction": [],
+            "Documentary": [],
+            "Mystery": []
+        }
+    },
+    "Restaurant": [],
+    
+}
