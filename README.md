@@ -1,3 +1,3 @@
 # Date-Knight
 
-Date night generator
+A lightweight date night generator using Flask
