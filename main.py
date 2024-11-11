@@ -1,7 +1,7 @@
 from random_generator import *
 
 def main():
-    return get_date(dates)
+    print(get_date(date_details))
 
 
 if __name__ == "__main__":
