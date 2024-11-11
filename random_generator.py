@@ -1,11 +1,11 @@
-from random import random
+import random
 from lists import restaurants, activities, movies
 
 
 dates = {
-    "restaurant": choice.restaurants,
-    "activity": choice.activities,
-    "movie": choice.movies
+    "restaurant": random.choice(restaurants),
+    "activity": random.choice(activities),
+    "movie": random.choice(movies)
 }
 
 def get_date(dates):
@@ -14,5 +14,5 @@ def get_date(dates):
     movie = None
     if activity == "movie":
         movie = dates["movie"]
-        return f"----------\nYour selected date:\nRestaurant: {restaurant}\nMovie: {movie}\n----------"
+        return f"----------\nYour selected date:\nRestaurant: {restaurant}\nActivity: {activity}\nMovie suggestion: {movie}\n----------"
     return f"----------\nYour selected date:\nRestaurant: {restaurant}\nActivity: {activity}\n----------"
