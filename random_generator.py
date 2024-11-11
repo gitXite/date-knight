@@ -1,21 +1,6 @@
 from random import random
 
 
-restaurants = [
-    "mcdonalds",
-    "burger_king"
-]
-
-activities = [
-    "movie",
-    "mini_golf"
-]
-
-movies = [
-    "saw",
-    "cinderella"
-]
-
 dates = {
     "restaurant": choice.restaurants,
     "activity": choice.activities,
