@@ -8,7 +8,7 @@ date_details = {
     "film": random.choice(movies)
 }
 
-def get_date(date_details):
+def get_date_suggestion(date_details):
     restaurant = date_details["restaurant"]
     activity = date_details["activity"]
     movie = date_details["film"]
