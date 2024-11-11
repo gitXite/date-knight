@@ -1,4 +1,5 @@
 from random import random
+from lists import restaurants, activities, movies
 
 
 dates = {
@@ -8,10 +9,10 @@ dates = {
 }
 
 def get_date(dates):
-    restaurant = pairing["restaurant"]
-    activity = pairing["activity"]
+    restaurant = dates["restaurant"]
+    activity = dates["activity"]
     movie = None
     if activity == "movie":
-        movie = pairing["movie"]
+        movie = dates["movie"]
         return f"----------\nYour selected date:\nRestaurant: {restaurant}\nMovie: {movie}\n----------"
     return f"----------\nYour selected date:\nRestaurant: {restaurant}\nActivity: {activity}\n----------"
