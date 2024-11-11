@@ -17,9 +17,9 @@ movies = [
 ]
 
 dates = {
-    "restaurant": random.restaurants,
-    "activity": random.activities,
-    "movie": random.movies
+    "restaurant": choice.restaurants,
+    "activity": choice.activities,
+    "movie": choice.movies
 }
 
 def get_date(dates):
