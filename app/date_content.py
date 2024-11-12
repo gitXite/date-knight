@@ -18,6 +18,12 @@ activities = {
         "Lola",
         "Amici Miei"
     ],
+    "Homemade dinner": [
+        "Marry me chicken",
+        "Sweet & sour chicken with cashew bed",
+        "Pasta carbonara",
+        "Steak"
+    ],
     "Drinks": [
         "Last Monkey",
         "No Stress",
