@@ -49,9 +49,9 @@ def get_random_activities(activities, n, activities_list=None, is_film=False, is
     return get_random_activities(activities, n-1, activities_list, is_film, is_food)
     
 def get_number_activities(user_input):
-    if not 0 < user_input < 6:
-        raise ValueError("The number of activities must be between 1 and 5")
+    if not 0 < user_input < 5:
+        raise ValueError("The number of activities must be between 1 and 4")
     return user_input
 
-user_input = int(input("Enter number of activities between 1 and 5"))
+user_input = int(input("Enter number of activities between 1 and 4"))
 n = get_number_activities(user_input)
