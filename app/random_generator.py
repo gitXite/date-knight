@@ -2,7 +2,17 @@ import random
 from date_content import activities
 
 
-def get_random_activities(activities, n, activities_list=None, limit=False):
+film_activities = [
+    "Movie",
+    "Cinema",
+    "Theatre"
+]
+food_activities = [
+    "Restaurant",
+    "Homemade dinner"
+]
+
+def get_random_activities(activities, n, activities_list=None, is_film=False, is_food=False):
     if activities_list is None:
         activities_list = []
     if n == 0:
@@ -11,30 +21,32 @@ def get_random_activities(activities, n, activities_list=None, limit=False):
     keys = list(activities.keys())
     random_key = random.choice(keys)
     value = activities[random_key]
-    if limit and (random_key == "Restaurant" or random_key == "Movie" or random_key == "Cinema" or random_key == "Theatre"):
-        get_random_activities(activities, n, activities_list, limit)
+    if is_film and (random_key in film_activities):
+        get_random_activities(activities, n, activities_list, is_film, is_food)
+    if is_food and (random_key in food_activities):
+        get_random_activities(activities, n, activities_list, is_film, is_food)
 
     if value is None:
-        limit = True if random_key == "Cinema" or random_key == "Theatre"
+        is_film = True if random_key in film_activities
         if random_key in activities_list:
-            get_random_activities(activities, n, activities_list, limit)
+            get_random_activities(activities, n, activities_list, is_film, is_food)
         else:
             activities_list.append(random_key)
     elif isinstance(value, list):
-        limit = True if random_key == "Restaurant"
+        is_food = True if random_key in food_activities
         result = random.choice(value)
         if result in activities_list:
-            get_random_activities(activities, n, activities_list, limit)
+            get_random_activities(activities, n, activities_list, is_film, is_food)
         else:
             activities_list.append(activity)
     elif isinstance(value, dict):
-        limit = True if random_key == "Movie"
-        nested_activity = get_random_activities(value, 1, activities_list, limit)
+        is_film = True if random_key in film_activities
+        nested_activity = get_random_activities(value, 1, activities_list, is_film, is_food)
         if nested_activity[0] in activities_list:
-            get_random_activities(activities, n, activities_list, limit)
+            get_random_activities(activities, n, activities_list, is_film, is_food)
         else:
             activities_list.append(nested_activity[0])
-    return get_random_activities(activities, n-1, activities_list, limit)
+    return get_random_activities(activities, n-1, activities_list, is_film, is_food)
     
 def get_number_activities(user_input):
     if not 0 < user_input < 6:
