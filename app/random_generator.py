@@ -34,8 +34,8 @@ def get_random_activities(activities, n, activities_list=None, is_film=False, is
             activities_list.append(random_key)
     elif isinstance(value, list):
         is_food = True if random_key in food_activities
-        result = random.choice(value)
-        if result in activities_list:
+        activity = random.choice(value)
+        if activity in activities_list:
             get_random_activities(activities, n, activities_list, is_film, is_food)
         else:
             activities_list.append(activity)
