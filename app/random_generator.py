@@ -2,9 +2,6 @@ import random
 from date_content import activities
 
 
-user_input = int(input("Enter number of activities between 1 and 5"))
-n = get_number_activities(user_input)
-
 def get_random_activities(activities, n, activities_list=None):
     if activities_list is None:
         activities_list = []
@@ -28,3 +25,6 @@ def get_number_activities(user_input):
     if not 0 < user_input < 6:
         raise ValueError("The number of activities must be between 1 and 5")
     return user_input
+
+user_input = int(input("Enter number of activities between 1 and 5"))
+n = get_number_activities(user_input)
