@@ -13,7 +13,10 @@ def get_random_activities(activities, n, activities_list=None):
     value = activities[random_key]
 
     if value is None:
-        activities_list.append(random_key)
+        if random_key in activities_list:
+            get_random_activities(activities, n, activities_list=None)
+        else:
+            activities_list.append(random_key)
     elif isinstance(value, list):
         activities_list.append(random.choice(value))
     elif isinstance(value, dict):
