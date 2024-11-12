@@ -2,7 +2,7 @@ import random
 from date_content import activities
 
 
-def get_random_activities(activities, n, activities_list=None):
+def get_random_activities(activities, n, activities_list=None, is_restaurant=False, is_movie=False):
     if activities_list is None:
         activities_list = []
     if n == 0:
@@ -11,25 +11,31 @@ def get_random_activities(activities, n, activities_list=None):
     keys = list(activities.keys())
     random_key = random.choice(keys)
     value = activities[random_key]
+    if is_restaurant and random_key == "Restaurant":
+        get_random_activities(activities, n, activities_list, is_restaurant, is_movie)
+    if is_movie and random_key == "Movie":
+        get_random_activities(activities, n, activities_list, is_restaurant, is_movie)
 
     if value is None:
         if random_key in activities_list:
-            get_random_activities(activities, n, activities_list)
+            get_random_activities(activities, n, activities_list, is_restaurant, is_movie)
         else:
             activities_list.append(random_key)
     elif isinstance(value, list):
-        activity = random.choice(value)
-        if activity in activities_list:
-            get_random_activities(activities, n, activities_list)
+        is_restaurant = True if random_key == "Restaurant"
+        result = random.choice(value)
+        if result in activities_list:
+            get_random_activities(activities, n, activities_list, is_restaurant, is_movie)
         else:
             activities_list.append(activity)
     elif isinstance(value, dict):
-        nested_activity = get_random_activities(value, 1, activities_list)
+        is_movie = True if random_key == "Movie"
+        nested_activity = get_random_activities(value, 1, activities_list, is_restaurant, is_movie)
         if nested_activity[0] in activities_list:
-            get_random_activities(activities, n, activities_list)
+            get_random_activities(activities, n, activities_list, is_restaurant, is_movie)
         else:
             activities_list.append(nested_activity[0])
-    return get_random_activities(activities, n-1, activities_list)
+    return get_random_activities(activities, n-1, activities_list, is_restaurant, is_movie)
     
 def get_number_activities(user_input):
     if not 0 < user_input < 6:
