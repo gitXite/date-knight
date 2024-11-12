@@ -18,7 +18,6 @@ activities = {
         "Lola",
         "Amici Miei"
     ],
-    "Mini golf": None, 
     "Drinks": [
         "Last Monkey",
         "No Stress",
@@ -31,7 +30,19 @@ activities = {
         "Darts",
         "Pool"
     ],
+    "Run/hike": [
+        "Stoltzekleiven",
+        "Ulrikken",
+        "Vidden", 
+        "Fløyen",
+        "Løvstakken"
+        "Store Lungegårdsvannet"
+    ], 
     "Jigsaw": None,
     "Paint": None,
-    "Stand up": None
+    "Stand up": None,
+    "Mini golf": None,
+    "Golf": None,
+    "Dessert": None, 
+    
 }
