@@ -44,5 +44,6 @@ activities = {
     "Mini golf": None,
     "Golf": None,
     "Dessert": None, 
-    
+    "Theatre": None,
+    "Cinema": None
 }
