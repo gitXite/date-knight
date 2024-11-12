@@ -11,10 +11,11 @@ def get_random_activities(activities, n, activities_list=None, limit=False):
     keys = list(activities.keys())
     random_key = random.choice(keys)
     value = activities[random_key]
-    if limit and (random_key == "Restaurant" or random_key == "Movie"):
+    if limit and (random_key == "Restaurant" or random_key == "Movie" or random_key == "Cinema" or random_key == "Theatre"):
         get_random_activities(activities, n, activities_list, limit)
 
     if value is None:
+        limit = True if random_key == "Cinema" or random_key == "Theatre"
         if random_key in activities_list:
             get_random_activities(activities, n, activities_list, limit)
         else:
