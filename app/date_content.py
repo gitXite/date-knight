@@ -14,7 +14,9 @@ activities = {
     "Restaurant": [
         "Villani",
         "Varanasi",
-        "Jest"
+        "Jest", 
+        "Lola",
+        "Amici Miei"
     ],
     "Mini golf": None, 
     "Drinks": [
