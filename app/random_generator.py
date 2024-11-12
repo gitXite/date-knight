@@ -42,9 +42,7 @@ def get_random_activities(activities, n, activities_list=None, is_film=False, is
     elif isinstance(value, dict):
         is_film = True if random_key in film_activities
         nested_activity = get_random_activities(value, 1, activities_list, is_film, is_food)
-        if nested_activity[0] in activities_list:
-            get_random_activities(activities, n, activities_list, is_film, is_food)
-        else:
+        if nested_activity[0] not in activities_list:
             activities_list.append(nested_activity[0])
     return get_random_activities(activities, n-1, activities_list, is_film, is_food)
     
