@@ -22,7 +22,9 @@ activities = {
     "Drinks": [
         "Last Monkey",
         "No Stress",
-        "Jest"
+        "Jest", 
+        "Dark and Stormy",
+        "Magda"
     ],
     "Bar game": [
         "Shuffleboard",
