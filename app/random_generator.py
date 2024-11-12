@@ -14,14 +14,21 @@ def get_random_activities(activities, n, activities_list=None):
 
     if value is None:
         if random_key in activities_list:
-            get_random_activities(activities, n, activities_list=None)
+            get_random_activities(activities, n, activities_list)
         else:
             activities_list.append(random_key)
     elif isinstance(value, list):
-        activities_list.append(random.choice(value))
+        activity = random.choice(value)
+        if activity in activities_list:
+            get_random_activities(activities, n, activities_list)
+        else:
+            activities_list.append(activity)
     elif isinstance(value, dict):
         nested_activity = get_random_activities(value, 1, activities_list)
-        activities_list.append(nested_activity[0])
+        if nested_activity[0] in activities_list:
+            get_random_activities(activities, n, activities_list)
+        else:
+            activities_list.append(nested_activity[0])
     return get_random_activities(activities, n-1, activities_list)
     
 def get_number_activities(user_input):
