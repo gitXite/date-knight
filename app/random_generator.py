@@ -2,6 +2,7 @@ import random
 from date_content import activities_bergen, activities_stavanger, activities_oslo, activities_trondheim
 
 
+# activity limits
 film_activities = [
     "Movie",
     "Cinema",
@@ -14,7 +15,7 @@ food_activities = [
 ]
 
 
-def get_random_activities(activities_bergen, n, activities_list=None, is_film=False, is_food=False, is_hike=False, attempts=0):
+def get_random_activities(activities_city, n, activities_list=None, is_film=False, is_food=False, is_hike=False, attempts=0):
     if activities_list is None:
         activities_list = []
     if n == 0:
@@ -23,15 +24,15 @@ def get_random_activities(activities_bergen, n, activities_list=None, is_film=Fa
         return activities_list
 
     # selects the random activities
-    keys = list(activities_bergen.keys())
+    keys = list(activities_city.keys())
     random_key = random.choice(keys)
-    value = activities_bergen[random_key]
+    value = activities_city[random_key]
 
     # checks the limit for specific activities and rerolls if limit is reached
     if (is_film and random_key in film_activities) or \
        (is_food and random_key in food_activities) or \
        (is_hike and random_key == "Run/hike"):
-        return get_random_activities(activities_bergen, n, activities_list, is_film, is_food, is_hike, attempts + 1)
+        return get_random_activities(activities_city, n, activities_list, is_film, is_food, is_hike, attempts + 1)
 
     if value is None:
         if random_key not in activities_list:
@@ -69,7 +70,7 @@ def get_random_activities(activities_bergen, n, activities_list=None, is_film=Fa
             elif random_key == "Run/hike":
                 is_hike = True
     if n > 0:
-        return get_random_activities(activities_bergen, n, activities_list, is_film, is_food, is_hike, attempts + 1)
+        return get_random_activities(activities_city, n, activities_list, is_film, is_food, is_hike, attempts + 1)
     return f"----------\nYour date for the evening: {activities_list}"
     
 def get_number_activities():
@@ -78,7 +79,7 @@ def get_number_activities():
         raise ValueError("The number of activities must be between 1 and 4")
     return user_input_num
 
-def get_city():
+def get_activities_city():
     user_input_city = input("Enter your city: ").lower()
     if user_input_city == "stavanger":
         return activities_stavanger
@@ -92,6 +93,6 @@ def get_city():
         raise ValueError("Specified city not available")
 
 
-city = get_city()
+city = get_activities_city()
 n = get_number_activities()
 print(get_random_activities(city, n))
