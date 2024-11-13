@@ -1,55 +1,83 @@
 import random
-from date_content import activities
+from date_content import activities_bergen
 
 
 film_activities = [
     "Movie",
     "Cinema",
-    "Theatre"
+    "Theatre",
+    "Stand up"
 ]
 food_activities = [
     "Restaurant",
     "Homemade dinner"
 ]
 
-def get_random_activities(activities, n, activities_list=None, is_film=False, is_food=False):
+
+def get_random_activities(activities_bergen, n, activities_list=None, is_film=False, is_food=False, is_hike=False, attempts=0):
     if activities_list is None:
         activities_list = []
     if n == 0:
         return activities_list
+    if attempts > 20:
+        return activities_list
 
-    keys = list(activities.keys())
+    # selects the random activities
+    keys = list(activities_bergen.keys())
     random_key = random.choice(keys)
-    value = activities[random_key]
-    if is_film and (random_key in film_activities):
-        get_random_activities(activities, n, activities_list, is_film, is_food)
-    if is_food and (random_key in food_activities):
-        get_random_activities(activities, n, activities_list, is_film, is_food)
+    value = activities_bergen[random_key]
+
+    # checks the limit for specific activities and rerolls if limit is reached
+    if (is_film and random_key in film_activities) or \
+       (is_food and random_key in food_activities) or \
+       (is_hike and random_key == "Run/hike"):
+        return get_random_activities(activities_bergen, n, activities_list, is_film, is_food, is_hike, attempts + 1)
 
     if value is None:
-        is_film = True if random_key in film_activities else False
-        if random_key in activities_list:
-            get_random_activities(activities, n, activities_list, is_film, is_food)
-        else:
+        if random_key not in activities_list:
             activities_list.append(random_key)
+            print(f"----------\nActivity selected: {random_key}!")
+            n -= 1
+            if random_key in film_activities:
+                is_film = True
+            elif random_key in food_activities:
+                is_food = True
+            elif random_key == "Run/hike":
+                is_hike = True
     elif isinstance(value, list):
-        is_food = True if random_key in food_activities else False
         activity = random.choice(value)
-        if activity in activities_list:
-            get_random_activities(activities, n, activities_list, is_film, is_food)
-        else:
+        if activity not in activities_list:
             activities_list.append(activity)
+            print(f"----------\nActivity selected: {random_key}!")
+            n -= 1
+            if random_key in film_activities:
+                is_film = True
+            elif random_key in food_activities:
+                is_food = True
+            elif random_key == "Run/hike":
+                is_hike = True
     elif isinstance(value, dict):
-        is_film = True if random_key in film_activities else False
-        nested_activity = get_random_activities(value, 1, activities_list, is_film, is_food)
-        if nested_activity[0] not in activities_list:
+        nested_activity = get_random_activities(value, 1, [], is_film, is_food, is_hike)
+        if nested_activity and nested_activity[0] not in activities_list:
             activities_list.append(nested_activity[0])
-    return get_random_activities(activities, n-1, activities_list, is_film, is_food)
+            print(f"----------\nActivity selected: {random_key}!")
+            n -= 1
+            if random_key in film_activities:
+                is_film = True
+            elif random_key in food_activities:
+                is_food = True
+            elif random_key == "Run/hike":
+                is_hike = True
+    if n > 0:
+        return get_random_activities(activities_bergen, n, activities_list, is_film, is_food, is_hike, attempts + 1)
+    return f"----------\nYour date for the evening: {activities_list}"
     
-def get_number_activities(user_input):
+def get_number_activities():
+    user_input = int(input("Enter number of activities between 1 and 4"))
     if not 0 < user_input < 5:
         raise ValueError("The number of activities must be between 1 and 4")
     return user_input
 
-user_input = int(input("Enter number of activities between 1 and 4"))
-n = get_number_activities(user_input)
+n = get_number_activities()
+print(get_random_activities(activities_bergen, n))
+

@@ -1,4 +1,4 @@
-activities = {
+activities_bergen = {
     "Movie": {
         "genre": {
             "Action": [],
@@ -41,14 +41,13 @@ activities = {
         "Ulrikken",
         "Vidden", 
         "Fløyen",
-        "Løvstakken"
+        "Løvstakken",
         "Store Lungegårdsvannet"
     ], 
     "Jigsaw": None,
     "Paint": None,
     "Stand up": None,
     "Mini golf": None,
-    "Golf": None,
     "Dessert": None, 
     "Theatre": None,
     "Cinema": None
