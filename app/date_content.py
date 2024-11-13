@@ -115,7 +115,7 @@ activities_stavanger = {
     "Bar game": [
         "Lucky Bowl & Lounge",
         "Inside Rock Cafe"
-    ]
+    ],
     "Jigsaw": None,
     "Paint": None,
     "Stand up": None,
