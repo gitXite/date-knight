@@ -1,5 +1,5 @@
 import random
-from date_content import activities_bergen
+from date_content import activities_bergen, activities_stavanger, activities_oslo, activities_trondheim
 
 
 film_activities = [
@@ -73,11 +73,25 @@ def get_random_activities(activities_bergen, n, activities_list=None, is_film=Fa
     return f"----------\nYour date for the evening: {activities_list}"
     
 def get_number_activities():
-    user_input = int(input("Enter number of activities between 1 and 4"))
-    if not 0 < user_input < 5:
+    user_input_num = int(input("Enter number of activities between 1 and 4: "))
+    if not 0 < user_input_num < 5:
         raise ValueError("The number of activities must be between 1 and 4")
-    return user_input
+    return user_input_num
 
+def get_city():
+    user_input_city = input("Enter your city: ").lower()
+    if user_input_city == "stavanger":
+        return activities_stavanger
+    elif user_input_city == "bergen":
+        return activities_bergen
+    elif user_input_city == "oslo":
+        return activities_oslo
+    elif user_input_city == "trondheim":
+        return activities_trondheim
+    else:
+        raise ValueError("Specified city not available")
+
+
+city = get_city()
 n = get_number_activities()
-print(get_random_activities(activities_bergen, n))
-
+print(get_random_activities(city, n))

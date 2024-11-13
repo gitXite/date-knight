@@ -52,3 +52,48 @@ activities_bergen = {
     "Theatre": None,
     "Cinema": None
 }
+
+activities_stavanger = {
+    "Movie": {
+        "genre": {
+            "Action": [],
+            "Thriller": [],
+            "Romance": [],
+            "Comedy": [],
+            "Horror": [],
+            "Science fiction": [],
+            "Documentary": [],
+            "Mystery": []
+        }
+    },
+}
+
+activities_oslo = {
+    "Movie": {
+        "genre": {
+            "Action": [],
+            "Thriller": [],
+            "Romance": [],
+            "Comedy": [],
+            "Horror": [],
+            "Science fiction": [],
+            "Documentary": [],
+            "Mystery": []
+        }
+    },
+}
+
+activities_trondheim = {
+    "Movie": {
+        "genre": {
+            "Action": [],
+            "Thriller": [],
+            "Romance": [],
+            "Comedy": [],
+            "Horror": [],
+            "Science fiction": [],
+            "Documentary": [],
+            "Mystery": []
+        }
+    },
+}
