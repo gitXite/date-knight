@@ -34,6 +34,7 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
        (is_hike and random_key == "Run/hike"):
         return get_random_activities(activities_city, n, activities_list, is_film, is_food, is_hike, attempts + 1)
 
+    # function body
     if value is None:
         if random_key not in activities_list:
             activities_list.append(random_key)
