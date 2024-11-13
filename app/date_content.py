@@ -65,7 +65,14 @@ activities_bergen = {
     "Theatre": None,
     "Cinema": None,
     "Paint'n Sip": None,
-    "Sauna": None
+    "Sauna": None,
+    "Pottery class": None,
+    "Cooking class": None,
+    "Dance lessons": None,
+    "Spa": None,
+    "Sup/kayak": None,
+    "Picnic": None,
+    "Hammock": None
 }
 
 activities_stavanger = {
