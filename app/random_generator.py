@@ -94,6 +94,6 @@ def get_activities_city():
         raise ValueError("Specified city not available")
 
 
-city = get_activities_city()
+activities_city = get_activities_city()
 n = get_number_activities()
-print(get_random_activities(city, n))
+print(get_random_activities(activities_city, n))
