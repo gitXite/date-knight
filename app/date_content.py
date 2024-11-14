@@ -72,7 +72,8 @@ activities_bergen = {
     "Spa": None,
     "Sup/kayak": None,
     "Picnic": None,
-    "Hammock": None
+    "Hammock": None,
+    "Bouldering": None
 }
 
 activities_stavanger = {
