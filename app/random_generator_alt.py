@@ -40,6 +40,9 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
             print(f"----------\nActivity selected: {random_activity}!")
             activities_list.append(random_activity)
             n -= 1
+            for dictionary in value:
+                for key, value in dictionary.items():
+                    print(f"{key}: {value}"
             if random_activity in film_activities:
                 is_film = True
             elif random_activity in food_activities:
