@@ -18,8 +18,6 @@ food_activities = [
 def get_random_activities(activities_city, n, activities_list=None, is_film=False, is_food=False, is_hike=False, attempts=0):
     if activities_list is None:
         activities_list = []
-    if n == 0:
-        return activities_list
     if attempts > 20:
         return activities_list
 
@@ -54,20 +52,23 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
         selection = random.choice(selection_keys)
         selection_value = activities_city[random_activity][selection]
         if isinstance(selection_value, list) and selection not in activities_list:
-            print(f"----------\nActivity selected: {random_activity}!")
-            activities_list.append(selection)
+            print(f"----------\nActivity selected: {selection}!")
+            activities_list.append(random_activity)
             n -= 1
+            for dictionary in selection_value:
+                for key, value in dictionary.items():
+                    print(f"{key}: {value}")
             if random_activity in film_activities:
                 is_film = True
             elif random_activity in food_activities:
                 is_food = True
             elif random_activity == "Run/hike":
                 is_hike = True
-        elif isinstance(selection_value, dict) and len(selection_value) > 1:
+        elif isinstance(selection_value, dict) and len(selection_value) >= 1:
             nested_activity = get_random_activities(selection_value, 1, [], is_film, is_food, is_hike)
             if nested_activity and nested_activity[0] not in activities_list:
-                print(f"----------\nActivity selected: {random_activity}!")
-                activities_list.append(nested_activity[0])
+                print(f"----------\nActivity selected: {nested_activity[0]}!")
+                activities_list.append(random_activity)
                 n -= 1
                 if random_activity in film_activities:
                     is_film = True
@@ -78,8 +79,8 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
     elif isinstance(value, dict) and len(value) == 1:
         nested_activity = get_random_activities(value, 1, [], is_film, is_food, is_hike)
         if nested_activity and nested_activity[0] not in activities_list:
-            print(f"----------\nActivity selected: {random_activity}!")
-            activities_list.append(nested_activity[0])
+            print(f"----------\nActivity selected: {nested_activity[0]}!")
+            activities_list.append(random_activity)
             n -= 1
             if random_activity in film_activities:
                 is_film = True
@@ -87,7 +88,7 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
                 is_food = True
             elif random_activity == "Run/hike":
                 is_hike = True
-    
+    # base case
     if n > 0:
         return get_random_activities(activities_city, n, activities_list, is_film, is_food, is_hike, attempts + 1)
     return f"----------\nYour date for the evening: {activities_list}"
