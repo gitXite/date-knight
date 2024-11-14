@@ -42,7 +42,7 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
             n -= 1
             for dictionary in value:
                 for key, value in dictionary.items():
-                    print(f"{key}: {value}"
+                    print(f"{key}: {value}")
             if random_activity in film_activities:
                 is_film = True
             elif random_activity in food_activities:
@@ -57,8 +57,6 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
             print(f"----------\nActivity selected: {random_activity}!")
             activities_list.append(selection)
             n -= 1
-            for key_value_pair in selection_value:
-                pass
             if random_activity in film_activities:
                 is_film = True
             elif random_activity in food_activities:
@@ -66,7 +64,7 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
             elif random_activity == "Run/hike":
                 is_hike = True
         elif isinstance(selection_value, dict) and len(selection_value) > 1:
-            nested_activity = get_random_activity(selection_value, 1, [], is_film, is_food, is_hike)
+            nested_activity = get_random_activities(selection_value, 1, [], is_film, is_food, is_hike)
             if nested_activity and nested_activity[0] not in activities_list:
                 print(f"----------\nActivity selected: {random_activity}!")
                 activities_list.append(nested_activity[0])
@@ -78,7 +76,7 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
                 elif random_activity == "Run/hike":
                     is_hike = True
     elif isinstance(value, dict) and len(value) == 1:
-        nested_activity = get_random_activity(value, 1, [], is_film, is_food, is_hike)
+        nested_activity = get_random_activities(value, 1, [], is_film, is_food, is_hike)
         if nested_activity and nested_activity[0] not in activities_list:
             print(f"----------\nActivity selected: {random_activity}!")
             activities_list.append(nested_activity[0])
