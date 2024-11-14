@@ -24,52 +24,50 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
         return activities_list
 
     # selects the random activities
-    keys = list(activities_city.keys())
-    random_key = random.choice(keys)
-    value = activities_city[random_key]
+    activity_keys = list(activities_city.keys())
+    random_activity = random.choice(activity_keys)
+    value = activities_city[random_activity]
 
     # checks the limit for specific activities and rerolls if limit is reached
-    if (is_film and random_key in film_activities) or \
-       (is_food and random_key in food_activities) or \
-       (is_hike and random_key == "Run/hike"):
+    if (is_film and random_activity in film_activities) or \
+       (is_food and random_activity in food_activities) or \
+       (is_hike and random_activity == "Run/hike"):
         return get_random_activities(activities_city, n, activities_list, is_film, is_food, is_hike, attempts + 1)
 
     # function body
-    if value is None:
-        if random_key not in activities_list:
-            activities_list.append(random_key)
-            print(f"----------\nActivity selected: {random_key}!")
+    if isinstance(value, list):
+        if random_activity not in activities_list:
+            print(f"----------\nActivity selected: {random_activity}!")
+            activities_list.append(random_activity)
             n -= 1
-            if random_key in film_activities:
+            if random_activity in film_activities:
                 is_film = True
-            elif random_key in food_activities:
+            elif random_activity in food_activities:
                 is_food = True
-            elif random_key == "Run/hike":
+            elif random_activity == "Run/hike":
                 is_hike = True
-    elif isinstance(value, list):
-        activity = random.choice(value)
-        if activity not in activities_list:
-            activities_list.append(activity)
-            print(f"----------\nActivity selected: {random_key}!")
+    elif isinstance(value, dict) and len(value) > 1:
+        selection_keys = list(value.keys())
+        selection = random.choice(selection_keys)
+        if selection not in activities_list:
+            print(f"----------\nActivity selected: {random_activity}!")
+            activities_list.append(selection)
             n -= 1
-            if random_key in film_activities:
+            info = activities_city[random_activity][selection]
+            if isinstance(info, list):
+                pass
+            if random_activity in film_activities:
                 is_film = True
-            elif random_key in food_activities:
+            elif random_activity in food_activities:
                 is_food = True
-            elif random_key == "Run/hike":
+            elif random_activity == "Run/hike":
                 is_hike = True
-    elif isinstance(value, dict):
-        nested_activity = get_random_activities(value, 1, [], is_film, is_food, is_hike)
+    elif isinstance(value, dict) and len(value) == 1:
+        nested_activity = get_random_activity(value, 1, [], is_film, is_food, is_hike)
         if nested_activity and nested_activity[0] not in activities_list:
-            activities_list.append(nested_activity[0])
-            print(f"----------\nActivity selected: {random_key}!")
+            activities_list.append(nested_activity)
             n -= 1
-            if random_key in film_activities:
-                is_film = True
-            elif random_key in food_activities:
-                is_food = True
-            elif random_key == "Run/hike":
-                is_hike = True
+    
     if n > 0:
         return get_random_activities(activities_city, n, activities_list, is_film, is_food, is_hike, attempts + 1)
     return f"----------\nYour date for the evening: {activities_list}"
