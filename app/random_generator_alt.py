@@ -1,5 +1,5 @@
 import random
-from date_content_alt import activities_bergen, activities_stavanger, activities_oslo, activities_trondheim
+from date_content_alt import activities_bergen#, activities_stavanger, activities_oslo, activities_trondheim
 
 
 # activity limits

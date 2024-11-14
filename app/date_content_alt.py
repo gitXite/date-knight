@@ -168,7 +168,7 @@ activities_bergen = {
             {"Cost": ""},
             {"Link": "INSERT URL HERE"}
         ],
-        "**Den nye på engen**": [
+        "Park N": [
             {"Time": ""},
             {"Cost": ""},
             {"Link": "INSERT URL HERE"}
