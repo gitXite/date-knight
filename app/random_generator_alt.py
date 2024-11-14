@@ -11,7 +11,8 @@ film_activities = [
 ]
 food_activities = [
     "Restaurant",
-    "Homemade dinner"
+    "Homemade dinner",
+    "Cooking class"
 ]
 
 
