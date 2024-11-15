@@ -14,33 +14,35 @@ food_activities = [
     "Homemade dinner",
     "Cooking class"
 ]
-"stavanger" = {
-    "first date": None, 
-    "active": None,
-    "Creative": None,
-    "adventurous": None,
-    "random": activities_stavanger
-}
-"bergen" = {
-    "first date": None, 
-    "active": None,
-    "Creative": None,
-    "adventurous": None,
-    "random": activities_bergen
-}
-"oslo" = {
-    "first date": None, 
-    "active": None,
-    "Creative": None,
-    "adventurous": None,
-    "random": activities_oslo
-}
-"trondheim" = {
-    "first date": None, 
-    "active": None,
-    "Creative": None,
-    "adventurous": None,
-    "random": activities_trondheim
+cities_categories = {
+    "stavanger": {
+        "first date": None, 
+        "active": None,
+        "Creative": None,
+        "adventurous": None,
+        "random": activities_stavanger
+    },
+    "bergen": {
+        "first date": None, 
+        "active": None,
+        "Creative": None,
+        "adventurous": None,
+        "random": activities_bergen
+    },
+    "oslo": {
+        "first date": None, 
+        "active": None,
+        "Creative": None,
+        "adventurous": None,
+        "random": activities_oslo
+    },
+    "trondheim": {
+        "first date": None, 
+        "active": None,
+        "Creative": None,
+        "adventurous": None,
+        "random": activities_trondheim
+    },
 }
 
 
@@ -128,7 +130,13 @@ def get_city(user_city):
     
 def get_activities_category(user_category, city):
     category = user_category.lower()
-    return city[category]
+    return cities_categories[city][category]
 
 def get_number_activities(number):
     return number
+
+
+city = get_city(bergen)
+activities = get_activities_category("random", city)
+n = get_number_activities(2)
+print(get_random_activities(activities, n))
