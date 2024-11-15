@@ -69,15 +69,10 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
             print(f"----------\nActivity selected: {random_activity}!")
             activities_list.append(random_activity)
             n -= 1
+            is_film, is_food, is_hike = set_limit(random_activity, is_film, is_food, is_hike)
             for dictionary in value:
                 for key, value in dictionary.items():
                     print(f"{key}: {value}")
-            if random_activity in film_activities:
-                is_film = True
-            elif random_activity in food_activities:
-                is_food = True
-            elif random_activity == "Run/hike":
-                is_hike = True
     elif isinstance(value, dict) and len(value) > 1:
         selection_keys = list(value.keys())
         selection = random.choice(selection_keys)
@@ -86,43 +81,37 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
             print(f"----------\nActivity selected: {selection}!")
             activities_list.append(random_activity)
             n -= 1
+            is_film, is_food, is_hike = set_limit(random_activity, is_film, is_food, is_hike)
             for dictionary in selection_value:
                 for key, value in dictionary.items():
                     print(f"{key}: {value}")
-            if random_activity in film_activities:
-                is_film = True
-            elif random_activity in food_activities:
-                is_food = True
-            elif random_activity == "Run/hike":
-                is_hike = True
         elif isinstance(selection_value, dict) and len(selection_value) >= 1:
             nested_activity = get_random_activities(selection_value, 1, [], is_film, is_food, is_hike)
             if nested_activity and nested_activity[0] not in activities_list:
                 print(f"----------\nActivity selected: {nested_activity[0]}!")
                 activities_list.append(random_activity)
                 n -= 1
-                if random_activity in film_activities:
-                    is_film = True
-                elif random_activity in food_activities:
-                    is_food = True
-                elif random_activity == "Run/hike":
-                    is_hike = True
+                is_film, is_food, is_hike = set_limit(random_activity, is_film, is_food, is_hike)
     elif isinstance(value, dict) and len(value) == 1:
         nested_activity = get_random_activities(value, 1, [], is_film, is_food, is_hike)
         if nested_activity and nested_activity[0] not in activities_list:
             print(f"----------\nActivity selected: {nested_activity[0]}!")
             activities_list.append(random_activity)
             n -= 1
-            if random_activity in film_activities:
-                is_film = True
-            elif random_activity in food_activities:
-                is_food = True
-            elif random_activity == "Run/hike":
-                is_hike = True
+            is_film, is_food, is_hike = set_limit(random_activity, is_film, is_food, is_hike)
     # base case
     if n > 0:
         return get_random_activities(activities_city, n, activities_list, is_film, is_food, is_hike, attempts + 1)
     return f"----------\nYour date for the evening: {activities_list}"
+
+def set_limits(random_activity, is_film, is_food, is_hike):
+    if random_activity in film_activities:
+        is_film = True
+    elif random_activity in food_activities:
+        is_food = True
+    elif random_activity == "Run/hike":
+        is_hike = True
+    return is_film, is_food, is_hike
     
 def get_city(user_city):
     city = user_city.lower()
