@@ -210,10 +210,6 @@ activities_bergen = {
         {"Time": ""},
         {"Cost": ""}
     ],
-    "Paint": [
-        {"Time": ""},
-        {"Cost": ""}
-    ],
     "Stand up": [
         {"Time": ""},
         {"Cost": ""},
@@ -287,6 +283,11 @@ activities_bergen = {
         {"Link": "INSERT URL HERE"}
     ],
     "Bouldering": [
+        {"Time": ""},
+        {"Cost": ""},
+        {"Link": "INSERT URL HERE"}
+    ],
+    "Padel": [
         {"Time": ""},
         {"Cost": ""},
         {"Link": "INSERT URL HERE"}
@@ -437,7 +438,7 @@ activities_stavanger = {
             {"Link": "INSERT URL HERE"}
         ]
     },
-    "Bar game": {
+    "Bar games": {
         "Lucky Bowl & Lounge": [
             {"Time": ""},
             {"Cost": ""},
@@ -450,10 +451,6 @@ activities_stavanger = {
         ]
     },
     "Jigsaw": [
-        {"Time": ""},
-        {"Cost": ""}
-    ],
-    "Paint": [
         {"Time": ""},
         {"Cost": ""}
     ],
@@ -528,6 +525,11 @@ activities_stavanger = {
         {"Time": ""},
         {"Cost": ""},
         {"Link": "INSERT URL HERE"}
+    ],
+    "Padel": [
+        {"Time": ""},
+        {"Cost": ""},
+        {"Link": "INSERT URL HERE"}
     ]
 }
 
@@ -544,16 +546,55 @@ activities_oslo = {
             "Mystery": {}
         }
     },
+    "Restaurant": {
+        "Placeholder": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ]
+    },
+    "Homemade dinner": {
+        "Marry me chicken": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ],
+        "Sweet & sour chicken with cashew bed": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ],
+        "Pasta carbonara": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ],
+        "Steak": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ]
+    },
+    "Drinks": {
+        "Placeholder": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ]
+    },
+    "Bar games": {
+        "Placeholder": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ]
+    },
     "Oslo Camping": [
         {"Time": ""},
         {"Cost": ""},
         {"Link": "INSERT URL HERE"}
     ],
     "Jigsaw": [
-        {"Time": ""},
-        {"Cost": ""}
-    ],
-    "Paint": [
         {"Time": ""},
         {"Cost": ""}
     ],
@@ -628,6 +669,11 @@ activities_oslo = {
         {"Time": ""},
         {"Cost": ""},
         {"Link": "INSERT URL HERE"}
+    ],
+    "Padel": [
+        {"Time": ""},
+        {"Cost": ""},
+        {"Link": "INSERT URL HERE"}
     ]
 }
 
@@ -644,16 +690,55 @@ activities_trondheim = {
             "Mystery": {}
         }
     },
+    "Restaurant": {
+        "Placeholder": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ]
+    },
+    "Homemade dinner": {
+        "Marry me chicken": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ],
+        "Sweet & sour chicken with cashew bed": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ],
+        "Pasta carbonara": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ],
+        "Steak": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ]
+    },
+    "Drinks": {
+        "Placeholder": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ]
+    },
+    "Bar games": {
+        "Placeholder": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ]
+    },
     "Trondheim Camping": [
         {"Time": ""},
         {"Cost": ""},
         {"Link": "INSERT URL HERE"}
     ],
     "Jigsaw": [
-        {"Time": ""},
-        {"Cost": ""}
-    ],
-    "Paint": [
         {"Time": ""},
         {"Cost": ""}
     ],
@@ -720,6 +805,11 @@ activities_trondheim = {
         {"Link": "INSERT URL HERE"}
     ],
     "Bouldering": [
+        {"Time": ""},
+        {"Cost": ""},
+        {"Link": "INSERT URL HERE"}
+    ],
+    "Padel": [
         {"Time": ""},
         {"Cost": ""},
         {"Link": "INSERT URL HERE"}

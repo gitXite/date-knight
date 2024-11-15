@@ -1,5 +1,5 @@
 import random
-from date_content_alt import activities_bergen, activities_stavanger, activities_oslo, activities_trondheim
+from date_contents import activities_bergen, activities_stavanger, activities_oslo, activities_trondheim
 
 
 # activity limits
@@ -112,6 +112,19 @@ def get_activities_city():
         return activities_trondheim
     else:
         raise ValueError("Specified city not available")
+
+def get_category(user_category):
+    category = user_category.lower()
+    if category == "first date":
+        return
+    elif category == "active":
+        return
+    elif category == "creative":
+        return
+    elif category == "adventurous":
+        return
+    elif category == "random":
+        return
 
 
 activities_city = get_activities_city()
