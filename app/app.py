@@ -1,11 +1,11 @@
 from flask import Flask, request, render_template, jsonify
 from main_logic import *
-from date_contents import *
+from app.random_contents import *
 
 
 app = Flask(__name__)
 
-    
+
 @app.route('/')
 def index():
     return render_template('index.html')
