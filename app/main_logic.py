@@ -128,7 +128,7 @@ def get_city(user_city):
     city = user_city.lower()
     return city
     
-def get_activities_category(user_category, city):
+def get_activities_by_category(user_category, city):
     category = user_category.lower()
     return cities_categories[city][category]
 
@@ -137,6 +137,6 @@ def get_number_activities(number):
 
 
 city = get_city(bergen)
-activities = get_activities_category("random", city)
+activities = get_activities_by_category("random", city)
 n = get_number_activities(2)
 print(get_random_activities(activities, n))
