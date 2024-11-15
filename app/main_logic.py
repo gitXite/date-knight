@@ -14,6 +14,34 @@ food_activities = [
     "Homemade dinner",
     "Cooking class"
 ]
+"stavanger" = {
+    "first date": None, 
+    "active": None,
+    "Creative": None,
+    "adventurous": None,
+    "random": activities_stavanger
+}
+"bergen" = {
+    "first date": None, 
+    "active": None,
+    "Creative": None,
+    "adventurous": None,
+    "random": activities_bergen
+}
+"oslo" = {
+    "first date": None, 
+    "active": None,
+    "Creative": None,
+    "adventurous": None,
+    "random": activities_oslo
+}
+"trondheim" = {
+    "first date": None, 
+    "active": None,
+    "Creative": None,
+    "adventurous": None,
+    "random": activities_trondheim
+}
 
 
 def get_random_activities(activities_city, n, activities_list=None, is_film=False, is_food=False, is_hike=False, attempts=0):
@@ -100,7 +128,7 @@ def get_city(user_city):
     
 def get_activities_category(user_category, city):
     category = user_category.lower()
-    
+    return city[category]
 
 def get_number_activities(number):
     return number
