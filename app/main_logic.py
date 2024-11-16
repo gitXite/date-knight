@@ -104,7 +104,7 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
         return get_random_activities(activities_city, n, activities_list, is_film, is_food, is_hike, attempts + 1)
     return f"----------\nYour date for the evening: {activities_list}"
 
-def set_limits(random_activity, is_film, is_food, is_hike):
+def set_limit(random_activity, is_film, is_food, is_hike):
     if random_activity in film_activities:
         is_film = True
     elif random_activity in food_activities:
@@ -121,7 +121,8 @@ def get_activities_by_category(user_category, city):
     category = user_category.lower()
     return cities_categories[city][category]
 
-def get_number_activities(number):
+def get_number_activities(user_number):
+    number = user_number if 0 < user_number < 5 else raise ValueError("Amount must be between 1 and 4")
     return number
 
 
