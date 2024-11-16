@@ -70,9 +70,7 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
             activities_list.append(random_activity)
             n -= 1
             is_film, is_food, is_hike = set_limit(random_activity, is_film, is_food, is_hike)
-            for dictionary in value:
-                for key, value in dictionary.items():
-                    print(f"{key}: {value}")
+            print(get_activity_info(value))
     elif isinstance(value, dict) and len(value) > 1:
         selection_keys = list(value.keys())
         selection = random.choice(selection_keys)
@@ -82,9 +80,7 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
             activities_list.append(random_activity)
             n -= 1
             is_film, is_food, is_hike = set_limit(random_activity, is_film, is_food, is_hike)
-            for dictionary in selection_value:
-                for key, value in dictionary.items():
-                    print(f"{key}: {value}")
+            print(get_activity_info(selection_value))
         elif isinstance(selection_value, dict) and len(selection_value) >= 1:
             nested_activity = get_random_activities(selection_value, 1, [], is_film, is_food, is_hike)
             if nested_activity and nested_activity[0] not in activities_list:
@@ -104,6 +100,11 @@ def get_random_activities(activities_city, n, activities_list=None, is_film=Fals
         return get_random_activities(activities_city, n, activities_list, is_film, is_food, is_hike, attempts + 1)
     return f"----------\nYour date for the evening: {activities_list}"
 
+def get_acitivity_info(info_list):
+    for dictionary in info_list:
+        for key, value in dictionary.items():
+            return key, value
+
 def set_limit(random_activity, is_film, is_food, is_hike):
     if random_activity in film_activities:
         is_film = True
@@ -122,8 +123,11 @@ def get_activities_by_category(user_category, city):
     return cities_categories[city][category]
 
 def get_number_activities(user_number):
-    number = user_number if 0 < user_number < 5 else raise ValueError("Amount must be between 1 and 4")
-    return number
+    if 0 < user_number < 5:
+        number = user_number
+        return number
+    else: 
+        raise ValueError("Amount must be between 1 and 4")
 
 
 city = get_city(bergen)
