@@ -1,1 +1,37 @@
+.navbar {
+    background-color: #212a31;
+    height: 45px;
+    overflow: hidden;
+    color: black;
+    border-radius: 5px;
+    position: fixed;
+}
+
+.navbar a {
+    float: left;
+    color: #d3d9d4;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font: 17px;
+}
+
+.navbar a:hover {
+    background-color: #d3d9d4;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #124e66;
+    color: black;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    color: black;
+}
 
