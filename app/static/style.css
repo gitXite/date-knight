@@ -7,6 +7,16 @@
     src: url(fonts/otf/Aspekta-100.otf);
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 body {
     background-image: url(images/joao-barbosa-G0EOSG4ScWM-unsplash-flipped.png);
     background-size: cover;
