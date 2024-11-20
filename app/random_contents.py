@@ -155,6 +155,16 @@ activities_bergen = {
             {"Time": ""},
             {"Cost": ""},
             {"Link": "INSERT URL HERE"}
+        ],
+        "Steppeulven": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
+        ],
+        "Kulturhuset": [
+            {"Time": ""},
+            {"Cost": ""},
+            {"Link": "INSERT URL HERE"}
         ]
     },
     "Bar games": {
@@ -671,6 +681,11 @@ activities_oslo = {
         {"Link": "INSERT URL HERE"}
     ],
     "Padel": [
+        {"Time": ""},
+        {"Cost": ""},
+        {"Link": "INSERT URL HERE"}
+    ],
+    "Paradox museum": [
         {"Time": ""},
         {"Cost": ""},
         {"Link": "INSERT URL HERE"}
