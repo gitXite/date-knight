@@ -9,6 +9,7 @@
 
 html {
 	scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -21,6 +22,12 @@ body {
     background-image: url(images/joao-barbosa-G0EOSG4ScWM-unsplash-flipped.png);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
 }
 
 .nav {
