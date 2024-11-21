@@ -7,27 +7,10 @@
     src: url(fonts/otf/Aspekta-100.otf);
 }
 
-html {
-	scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
-}
-
 body {
     background-image: url(images/joao-barbosa-G0EOSG4ScWM-unsplash-flipped.png);
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-section {
-    height: 100vh;
-    width: 100vw;
-    scroll-snap-align: start;
 }
 
 .nav {
@@ -88,9 +71,12 @@ section {
     margin-right: 15px;
     height: 150px;
     width: 300px;
-    background-color: #ccc;
+    background: rgba( 255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .info-2 {
@@ -98,10 +84,12 @@ section {
     margin-right: 15px;
     height: 150px;
     width: 300px;
-    background-color: #ccc;
+    background: rgba( 255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    opacity: 80%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .info-3 {
@@ -109,10 +97,12 @@ section {
     margin-right: 15px;
     height: 150px;
     width: 300px;
-    background-color: #ccc;
+    background: rgba( 255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    opacity: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .flags h2 {
@@ -120,7 +110,7 @@ section {
     padding-bottom: 20px;
     margin-left: 15%;
     margin-right: 15%;
-    padding: 5px;
+    padding: 3px;
     margin-bottom: 5px;
 }
 

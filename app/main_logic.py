@@ -130,7 +130,7 @@ def get_number_activities(user_number):
         raise ValueError("Amount must be between 1 and 4")
 
 
-city = get_city("bergen")
+"""city = get_city("bergen")
 activities = get_activities_by_category("random", city)
 n = get_number_activities(2)
-print(get_random_activities(activities, n))
+print(get_random_activities(activities, n))"""
