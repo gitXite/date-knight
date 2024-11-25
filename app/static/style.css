@@ -200,3 +200,22 @@ body {
     scale: 110%;
     transition: 0.2s;
 }
+
+.about {
+    position: relative;
+    top: 50px;
+    left: 400px;
+    font-family: "Aspekta-350";
+    height: max-content;
+    width: max-content;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+}
+
+.cities {
+    font-family: "Aspekta-350";
+}
