@@ -7,6 +7,15 @@
     src: url(fonts/otf/Aspekta-100.otf);
 }
 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 body {
     background-image: url(/static/images/background.jpg);
     background-size: cover;
@@ -20,6 +29,7 @@ body {
 }
 
 header {
+    animation: 0.5s ease-out 0s 1 slideInFromLeft;
     padding: 2rem 2rem;
 }
 
@@ -275,6 +285,7 @@ header {
 .cities {
     display: flex;
     align-items: center;
+    text-decoration: none;
     float: left;
     position: relative;
     top: 200px;
