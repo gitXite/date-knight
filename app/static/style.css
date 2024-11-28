@@ -34,7 +34,7 @@ header {
     padding: 2rem 2rem;
 }
 
-.main {
+.hero-content {
     width: max-content;
     height: max-content;
     
@@ -43,7 +43,7 @@ header {
     color: white;
 }
 
-.main button {
+.hero-content button {
     width: 200px;
     height: 40px;
     border: 1px solid;
@@ -51,10 +51,11 @@ header {
     color: white;
     
     background-color: black;
-    transition: 0.2s ease;
+    transition: 0.2s;
 }
 
-.main button:hover {
+.hero-content button:hover {
+    scale: 110%;
     color: black;
     background-color: white;
 }
