@@ -195,6 +195,10 @@ header {
     animation: 0.5s ease-out 0s 1 slideInFromLeft;
 }
 
+.hide {
+    display: none;
+}
+
 .info-1:hover {
     height: 250px;
 }
