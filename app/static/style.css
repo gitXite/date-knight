@@ -195,18 +195,47 @@ header {
     animation: 0.5s ease-out 0s 1 slideInFromLeft;
 }
 
-.hide {
-    display: none;
+.info-1::after {
+    content: "Locations and activities are handpicked";
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s ease-in;
 }
 
-.info-1:hover {
-    height: 250px;
+.info-1:hover::after {
+    visibility: visible;
+    opacity: 1;
 }
 
-.info-2:hover {
-    height: 250px;
+.info-2::after {
+    content: "Are you ready to impress?";
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s ease-in;
 }
 
+.info-2:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.info-3::after {
+    content: "You won't regret it";
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s ease-in;
+}
+
+.info-3:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.info-1:hover,
+.info-2:hover,
 .info-3:hover {
     height: 250px;
 }
@@ -228,6 +257,7 @@ header {
     width: 80%;
     height: 50px;
     margin: 0;
+    margin-bottom: 5px;
     color: white;
 }
 
