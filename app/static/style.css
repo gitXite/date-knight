@@ -33,11 +33,12 @@ body {
 
 header {
     height: 6em;
-    padding: 2rem 2rem;
+    padding: 0 2rem 2rem 2rem;
 }
 
 .nav {
     display: flex;
+    float: left;
     align-items: center;
     height: 6em;
     width: 100%;
@@ -49,28 +50,17 @@ header {
     text-align: center;
 }
 
-.nav .logo {
-    margin-bottom: 2em;
-    margin-left: 4em;
-}
-
-.nav .logo img {
-    width: 7em;
+.brand {
+    display: flex;
+    width: 20em;
     height: auto;
+    margin-left: 2vw;
+    animation: 0.5s ease-out 0s 1 slideInFromLeft;
 }
 
-.nav .brand {
-    width: 15em;
-    height: auto;
-    margin-left: 2vh;
-    margin-right: 4vw;
-}
-
-.nav .nav-button {
+.nav-button {
     display: flex;
     align-items: center;
-    position: absolute;
-    right: 10vw;
     width: max-content;
     height: auto;
     padding-right: 2vw;
