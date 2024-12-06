@@ -28,7 +28,7 @@ body {
     background-image: url(/static/images/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0 -480px;
+    background-position: 0 -450px;
 }
 
 header {
@@ -37,6 +37,11 @@ header {
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(7px);
+    transition: background 0.2s ease;
+}
+
+header:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .nav {
@@ -78,7 +83,7 @@ header {
 }
 
 .nav .nav-button a:hover {
-    color: white;
+    color:	#a50727;
     transform: scale(1.1);
 }
 
@@ -102,7 +107,7 @@ header {
 
 .login:hover, 
 .register:hover {
-    color: white;
+    color: #a50727;
     transform: scale(1.1);
 }
 
@@ -120,6 +125,10 @@ header {
 }
 
 @media screen and (max-width:768px) {
+    body {
+        background-size: 100% auto;
+        background-position: 0 -200px;
+    }
     .nav {
         flex-direction: column;
         align-items: center;
@@ -222,6 +231,7 @@ header {
     margin-top: 15px;
     border: 1px solid;
     border-radius: 15px;
+    border-color: white;
     font-size: 17px;
     color: white;
 
@@ -231,8 +241,8 @@ header {
 
 .hero-content button:hover {
     scale: 110%;
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: #a50727;
     cursor: pointer;
 }
 
@@ -476,8 +486,8 @@ header {
 }
 
 .contact input[type="submit"]:hover {
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: #a50727;
     transform: scale(110%);
     cursor: pointer;
 }
