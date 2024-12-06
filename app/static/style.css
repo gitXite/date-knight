@@ -32,19 +32,20 @@ body {
 }
 
 header {
-    height: 6em;
-    padding: 0 2rem 2rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(7px);
 }
 
 .nav {
     display: flex;
-    float: left;
+    justify-content: space-between;
     align-items: center;
-    height: 6em;
-    width: 100%;
-    border-bottom: 1px solid;
-    border-image: linear-gradient(to left, white, white);
-    border-image-slice: 1;
+    flex-wrap: wrap;
+    height: auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     
     font-family: "Aspekta-350";
     text-align: center;
@@ -52,25 +53,25 @@ header {
 
 .brand {
     display: flex;
-    width: 20em;
+    max-width: 300px;
     height: auto;
-    margin-left: 2vw;
+    margin-left: 1rem;
     animation: 0.5s ease-out 0s 1 slideInFromLeft;
 }
 
 .nav-button {
     display: flex;
+    position: absolute;
+    left: 20vw;
     align-items: center;
-    width: max-content;
-    height: auto;
-    padding-right: 2vw;
-    padding-left: 2vw;
+    gap: 1rem;
+    margin: 0 4rem;
 }
 
 .nav-button a {
-    margin-right: 4vw;
-    margin-left: 4vw;
-    font-size: 25px;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    font-size: 20px;
     text-decoration: none;
     color: black;
     transition: 0.2s ease;
@@ -78,30 +79,22 @@ header {
 
 .nav .nav-button a:hover {
     color: white;
-    transform: scale(110%);
+    transform: scale(1.1);
 }
 
 .login-register {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 2.5vw;
+    right: 1vw;
+    gap: 1rem;
+    margin-right: 2rem;
     width: max-content;
     height: auto;
-    padding-left: 2vw;
 }
 
-.login {
-    margin-right: 1vw;
-    margin-left: 1vw;
-    text-decoration: none;
-    color: black;
-    transition: 0.2s;
-}
-
+.login,
 .register {
-    margin-right: 1vw;
-    margin-left: 1vw;
     text-decoration: none;
     color: black;
     transition: 0.2s;
@@ -110,7 +103,83 @@ header {
 .login:hover, 
 .register:hover {
     color: white;
-    transform: scale(110%);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:1024px) {
+    .nav {
+        align-items: center;
+    }
+    .brand {
+        max-width: 250px;
+        margin: 0 0.5rem;
+    }
+    .nav-button {
+        margin: 0 4rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .brand {
+        max-width: 200px;
+        margin: 0 0.5rem;
+    }
+    .nav-button {
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        gap: 0.5rem;
+        margin-left: 1rem;
+    }
+    .nav-button a {
+        margin: 0 auto;
+        font-size: 15px;
+    }
+    .login-register {
+        align-items: center;
+        position: absolute;
+        right: 0;
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+    .login-register a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .brand {
+        max-width: 200px;
+        margin: 0 0.5rem;
+    }
+    .nav-button {
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        gap: 0.5rem;
+        margin-left: 1rem;
+    }
+    .nav-button a {
+        margin: 0 auto;
+        font-size: 15px;
+    }
+    .login-register {
+        align-items: center;
+        position: absolute;
+        right: 0;
+        margin-top: 1rem;
+    }
+    .login-register a {
+        font-size: 12px;
+    }
 }
 
 .hero {
