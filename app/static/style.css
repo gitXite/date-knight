@@ -559,6 +559,7 @@ header:hover {
 }
 
 .cities a:hover {
+    color: #a50727;
     transform: scale(115%);
 }
 
