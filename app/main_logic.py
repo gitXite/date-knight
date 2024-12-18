@@ -124,8 +124,7 @@ def get_activities_by_category(user_category, city):
 
 def get_number_activities(user_number):
     if 0 < user_number < 5:
-        number = user_number
-        return number
+        return user_number
     else: 
         raise ValueError("Amount must be between 1 and 4")
 
