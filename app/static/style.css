@@ -61,7 +61,7 @@ header:hover {
     max-width: 300px;
     height: auto;
     margin-left: 1rem;
-    animation: 0.5s ease-out 0s 1 slideInFromLeft;
+    /* animation: 0.5s ease-out 0s 1 slideInFromLeft; */
 }
 
 .nav-button {
