@@ -111,86 +111,6 @@ header:hover {
     transform: scale(1.1);
 }
 
-@media screen and (max-width:1024px) {
-    .nav {
-        align-items: center;
-    }
-    .brand {
-        max-width: 250px;
-        margin: 0 0.5rem;
-    }
-    .nav-button {
-        margin: 0 4rem;
-    }
-}
-
-@media screen and (max-width:768px) {
-    body {
-        background-size: 100% auto;
-        background-position: 0 -200px;
-    }
-    .nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    .brand {
-        max-width: 200px;
-        margin: 0 0.5rem;
-    }
-    .nav-button {
-        flex-direction: column;
-        position: absolute;
-        left: 0;
-        gap: 0.5rem;
-        margin-left: 1rem;
-    }
-    .nav-button a {
-        margin: 0 auto;
-        font-size: 15px;
-    }
-    .login-register {
-        align-items: center;
-        position: absolute;
-        right: 0;
-        margin-top: 1rem;
-        margin-right: 1rem;
-    }
-    .login-register a {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width:425px) {
-    .nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    .brand {
-        max-width: 200px;
-        margin: 0 0.5rem;
-    }
-    .nav-button {
-        flex-direction: column;
-        position: absolute;
-        left: 0;
-        gap: 0.5rem;
-        margin-left: 1rem;
-    }
-    .nav-button a {
-        margin: 0 auto;
-        font-size: 15px;
-    }
-    .login-register {
-        align-items: center;
-        position: absolute;
-        right: 0;
-        margin-top: 1rem;
-    }
-    .login-register a {
-        font-size: 12px;
-    }
-}
-
 .hero {
     display: flex;
     float: middle;
@@ -247,23 +167,12 @@ header:hover {
 }
 
 .hero-logo {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
-
-.hero-logo img {
-    position: absolute;
-    right: 300px;
-    bottom: 20px;
-    width: 200px;
-    height: auto;
-}
-
-.hero-logo img:first-of-type {
-    position: absolute;
-    top: 10px;
-    right: 150px;
-    width: 500px;
-    height: auto;
+.hero-logo svg {
+    display: flex;
 }
 
 .info-1 {
