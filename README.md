@@ -56,4 +56,4 @@ Built for simplicity and fun!
 #### Bergen
 
 ## 📜 License
-This project is licensed under the MIT License.
+This project is licensed under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license — non-commercial use only.
