@@ -7,6 +7,9 @@ With just the click of a button, you'll be sent to the best date spots in town.
 You can even choose the type of date you want to generate — from cozy and casual to adventurous and memorable.
 Are you ready to impress?
 
+### Proof of Concept
+This is a proof of concept, that I'm planning to migrate to React with separate frontend and backend. 
+
 ## 🔧 Tech Stack
 - Mono repo: Python & Flask
 
