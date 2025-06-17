@@ -22,8 +22,8 @@ This is a proof of concept, that I'm planning to migrate to React with separate 
 ### Installation
 1. Clone the repository:
 ```
-git clone https://github.com/gitXite/date-knight.git
-cd date-knight
+git clone https://github.com/gitXite/date-knight_poc.git
+cd date-knight_poc
 ```
 2. Create a virtual environment:
 ```
